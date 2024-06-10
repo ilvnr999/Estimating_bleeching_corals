@@ -32,12 +32,11 @@ def main(target_list):
                     y_train, y_test = y[train_index], y[test_index]
                     regressor.fit(X_train,y_train)
                     R2.append((regressor.score(X_test, y_test)))
-                if np.mean(R2) > 0:
-                    best_R2[0].append(tag)
-                    best_R2[1].append(num)
-                    #best_R2[1].append(round((np.mean(R2)),3))
-                    best_R2[2].append(np.mean(R2))
-                    #print(f'\n{tag} degree{num} average-R2:{round((np.mean(R2)),3)}')    
+                best_R2[0].append(tag)
+                best_R2[1].append(num)
+                #best_R2[1].append(round((np.mean(R2)),3))
+                best_R2[2].append(np.mean(R2))
+                #print(f'\n{tag} degree{num} average-R2:{round((np.mean(R2)),3)}')    
                 #print(f'R2:{R2}')
                 #print(f'average-R2:{round((np.mean(R2)),3)}')
         #best3 = map(best_R2.index, heapq.nlargest(3, best_R2))
@@ -46,13 +45,7 @@ def main(target_list):
         best3 = np.array(best_R2[2])
         b = best3.argsort()
         length = len(b)
-        if length >= 5:
-            start = length -1
-            stop = length -6
-        else :
-            start = length - 1
-            stop = -1
-        for i in range(start,stop,-1):
+        for i in range(length-1,0,-1):
             print("%-20s %d %10.3f"%(best_R2[0][b[i]],best_R2[1][b[i]],best_R2[2][b[i]]))
             save_R2[0].append(best_R2[0][b[i]])
             save_R2[1].append(best_R2[1][b[i]])
