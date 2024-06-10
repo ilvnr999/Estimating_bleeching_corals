@@ -31,23 +31,17 @@ def main(target_list):
                             y_train, y_test = y[train_index], y[test_index]
                             regressor.fit(X_train,y_train)
                             R2.append((regressor.score(X_test, y_test)))
-                        if np.mean(R2) > 0:
-                            best_R2[0].append(tag1)
-                            best_R2[1].append(tag2)
-                            best_R2[2].append(tag3)
-                            best_R2[3].append(num)
-                            best_R2[4].append(np.mean(R2))
+                        #if np.mean(R2) > 0:
+                        best_R2[0].append(tag1)
+                        best_R2[1].append(tag2)
+                        best_R2[2].append(tag3)
+                        best_R2[3].append(num)
+                        best_R2[4].append(np.mean(R2))
         print(target)
         best3 = np.array(best_R2[4])
         b = best3.argsort()
         length = len(b)
-        if length >= 5:
-            start = length -1
-            stop = length -6
-        else :
-            start = length - 1
-            stop = -1
-        for i in range(start,stop,-1):
+        for i in range(length-1,-1,-1):
             print("%-20s %-20s %-20s %d %10.6f"%(best_R2[0][b[i]],best_R2[1][b[i]],best_R2[2][b[i]],best_R2[3][b[i]],best_R2[4][b[i]]))
             save_R2[0].append(best_R2[0][b[i]])
             save_R2[1].append(best_R2[1][b[i]])

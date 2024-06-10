@@ -34,7 +34,10 @@ def main(target_list):
                                         j[32], j[33], j[34], j[35], j[36], j[37],
                                         j[38], j[39], j[40], j[41], j[42], j[43],
                                         j[44], j[45], j[46], j[47], j[48], j[49],
-                                        j[50], j[51], j[52], j[53], j[54], j[55]])
+                                        j[50], j[51], j[52], j[53], j[54], j[55],
+                                        j[56], j[57], j[58], j[59], j[60], j[61],
+                                        j[62], j[63], j[64], j[65], j[66], j[67],
+                                        j[68], j[69], j[70], j[71], j[72], j[73]])
 
         df = pd.DataFrame(list_excel, columns=["name","symbiodinium", "area", "nor",
                                             "hsv_h_mean","hsv_h_median","hsv_h_variance","hsv_h_std_dev","hsv_h_25","hsv_h_75",
@@ -45,7 +48,10 @@ def main(target_list):
                                             "lab_b_mean","lab_b_median","lab_b_variance","lab_b_std_dev","lab_b_25","lab_b_75",
                                             "xyz_x_mean","xyz_x_median","xyz_x_variance","xyz_x_std_dev","xyz_x_25","xyz_x_75",
                                             "xyz_y_mean","xyz_y_median","xyz_y_variance","xyz_y_std_dev","xyz_y_25","xyz_y_75",
-                                            "xyz_z_mean","xyz_z_median","xyz_z_variance","xyz_z_std_dev","xyz_z_25","xyz_z_75"])      # 設定資料為dataframe column名稱設定
+                                            "xyz_z_mean","xyz_z_median","xyz_z_variance","xyz_z_std_dev","xyz_z_25","xyz_z_75",
+                                            "yuv_y_mean","yuv_y_median","yuv_y_variance","yuv_y_std_dev","yuv_y_25","yuv_y_75",
+                                            "yuv_u_mean","yuv_u_median","yuv_u_variance","yuv_u_std_dev","yuv_u_25","yuv_u_75",
+                                            "yuv_v_mean","yuv_v_median","yuv_v_variance","yuv_v_std_dev","yuv_v_25","yuv_v_75"])      # 設定資料為dataframe column名稱設定
         excel_file = f'stage2_excels/{target}/{target}_merge_data.xlsx'     # 輸出excel檔案名稱
 
         with pd.ExcelWriter(excel_file, engine='openpyxl', mode='w') as writer:     # 設定？
