@@ -74,7 +74,7 @@ if __name__ == "__main__":
         data = pd.read_excel(f'stage2_excels/{target}/{target}_merge_data_rbf.xlsx')
         nor = data['nor']
         all_tags = data.columns
-        columns_to_extract = data.iloc[:, [3, 4, 5]]
+        columns_to_extract = data.iloc[:, [4, 5, 6]]
 
         # 将这些列转换为 numpy 数组
         columns_array = columns_to_extract.to_numpy()
